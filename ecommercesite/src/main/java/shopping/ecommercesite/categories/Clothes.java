@@ -1,18 +1,16 @@
 package shopping.ecommercesite.categories;
 
-import java.util.ArrayList;
+import java.io.IOException;
+
+import shopping.ecommercesite.service.ExcelSerivce;
 
 public class Clothes implements BuyProducts {
-	private ArrayList<String> clothing = null;
 
-	public void buy() {
-		clothing = new ArrayList<String>();
-		clothing.add("Saree");
-		clothing.add(1, "Kurta's");
-		clothing.add("Jeans");
-		Object[] allTypeOfClothes = clothing.toArray();
-		for (Object o : allTypeOfClothes) {
-			System.out.println(o);
-		}
+	ExcelSerivce service = new ExcelSerivce();
+
+	public void buy(String fileName, String className) throws IOException {
+
+		service.buy("C:/Users/ak43627/Desktop/Database/ShoppinDataBase.xlsx", "Clothes");
 	}
+
 }

@@ -1,17 +1,18 @@
 package shopping.ecommercesite.categories;
 
+import java.io.IOException;
 import java.util.AbstractList;
 import java.util.ArrayList;
 
+import shopping.ecommercesite.service.ExcelSerivce;
+
 public class Accesseries implements BuyProducts {
 
-	public void buy() {
+	ExcelSerivce service = new ExcelSerivce();
 
-		AbstractList<String> access = new ArrayList<String>();
-		access.add("ear rings");
-		access.add("braclete");
-		for (String s : access) {
-			System.out.println(s);
-		}
+	public void buy(String fileName, String className) throws IOException {
+
+		service.buy("C:/Users/ak43627/Desktop/Database/ShoppinDataBase.xlsx", "Accesseries");
 	}
-}
+	}
+
